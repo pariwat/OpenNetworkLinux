@@ -1,0 +1,25 @@
+From e76a6e20b6efb73d39bb732d3c746a0f5481c0d2 Mon Sep 17 00:00:00 2001
+From: Pariwat <leamsumran.p@gmail.com>
+Date: Sat, 7 Jan 2023 18:37:58 +0700
+Subject: [PATCH] Fix arm64 build failed.
+
+---
+ Makefile | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Makefile b/Makefile
+index acbc1b03..80f0caa8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -393,6 +393,8 @@ LINUXINCLUDE	+= $(filter-out $(LINUXINCLUDE),$(USERINCLUDE))
+ KBUILD_AFLAGS   := -D__ASSEMBLY__
+ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+ 		   -fno-strict-aliasing -fno-common \
++           -Wno-packed-not-aligned \
++           -Wno-tautological-compare \
+ 		   -Werror-implicit-function-declaration \
+ 		   -Wno-format-security \
+ 		   -std=gnu89
+-- 
+2.25.1
+
