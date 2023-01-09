@@ -1,0 +1,1 @@
+!include $ONL_TEMPLATES/no-platform-modules.yml ARCH=arm64 VENDOR=celestica BASENAME=arm64-celestica-cs8260
